@@ -7,8 +7,8 @@ export const useContentStore = defineStore("content", {
   getters: {
     content: (state) => state.text,
     titles: function (state) {
-      if (!state.text || !state.text.blocks) return null;
-      return state.text.blocks.filter((row) => row.type == "header");
+      if (!state.text || !state.text.content) return null;
+      return state.text.content.filter((row) => row.type == "heading");
     },
   },
   actions: {
